@@ -9,7 +9,7 @@ const Home = () => {
   const [task, setTask] = useState({});
 
   useEffect(() => {
-    fetch('https://playground.4geeks.com/todo/users/leivi')
+    fetch('https://playground.4geeks.com/todo/users/Leivi521')
       .then((response) => {
         console.log(response)
 
@@ -33,7 +33,7 @@ const Home = () => {
   const addTodolist = (e) => {
 
 
-    const newTask = { label: inputValue, done: false };
+    const newTask = { label: inputValue, is_done: false };
 
     setTask(newTask);
 
@@ -41,7 +41,7 @@ const Home = () => {
 
     setInputValue("");
 
-    fetch('https://playground.4geeks.com/todo/todos/leivi', {
+    fetch('https://playground.4geeks.com/todo/todos/Leivi521', {
       method: "POST",
       body: JSON.stringify(newTask),
 
@@ -119,6 +119,7 @@ const Home = () => {
 
               <li key={index}>
                 {index + 1}
+                {".  "}
                 {task.label} <button onClick={() => handleDelete(index, task.id)}>Delete</button>
               </li>
             )}
